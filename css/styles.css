@@ -101,17 +101,16 @@ button {
     color: var(--title-text-color);
 }
 
-.header-line-link::after{
+
+.header-line-link.header-link::after{
     content: '';
     display: block;
-    position: absolute;
     width: 100%;
     height: 4px;
     background-color: var(--color-ocean);
     border-radius: 2px;
+    position: absolute;
     bottom: -3.5px;
-
-
 }
 .header-link {
     font-weight: 500;
@@ -121,6 +120,8 @@ button {
     color: var(--title-text-color);
     position: relative;
     padding: 24px 0;
+    transition:
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover {
@@ -162,6 +163,8 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--praimary-text-color);
+    transition:
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address:hover {
@@ -237,9 +240,7 @@ button {
     letter-spacing: 0.04em;
     cursor: pointer;
     background: var(--logo-text-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -352,6 +353,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .hero-soc-link:hover {
     background-color: var(--color-ocean);
@@ -384,7 +387,8 @@ button {
     justify-content: center;
     width: 100%;
     height: 88px;
-
+    transition: 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-client-link:hover {
@@ -396,6 +400,8 @@ button {
 
 .client-flex {
     fill: var(--lighte-slate);
+    transition: 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-client-link:hover .client-flex {
@@ -509,6 +515,8 @@ button {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover {
@@ -559,6 +567,7 @@ button {
     letter-spacing: 0.04em;
     cursor: pointer;
     border: 1px solid var(--footer-text-color);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .text-btn:hover {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -575,7 +584,10 @@ button {
     border: none;
     text-transform: none;
     background: var(--footer-text-color);
-    color: var(--logo-text-color)
+    color: var(--logo-text-color);
+    transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-btn:hover,
@@ -609,7 +621,6 @@ button {
 
 .image {
     display: block;
-    width: 360px;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -642,12 +653,14 @@ button {
 .text-cover-card {
     position: absolute;
     top: 0;
+    left: 0;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.5px;
+    line-height: 1.5;
     color: #f4f4fd;
     background-color: #4D5AE5;
     height: 100%;
+    width: 100%;
     padding: 40px 32px;
     transform: translatey(100%);
     transition: transform 250ms linear;
@@ -674,6 +687,8 @@ button {
     height: 100%;
     z-index: 100;
     background: rgba(46, 47, 66, 0.4);
+    opacity: 1;
+    transition: opacity 250ms linear, visibility 250ms linear;
 }
 
 .is-hidden.backdrop {
@@ -682,18 +697,17 @@ button {
     pointer-events: none;
 }
 
-
 .modal-window {
     position: absolute;
     width: 408px;
     height: 576px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     background: #fcfcfc;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) linear;
 }
 
 .modal-close-btn {
@@ -709,6 +723,9 @@ button {
     height: 24px;
     border: solid 1px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    transition:
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover {
     background: var(--color-ocean); 
